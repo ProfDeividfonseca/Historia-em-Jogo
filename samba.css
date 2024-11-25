@@ -60,7 +60,8 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Faz a imagem de fundo ficar fixa e melhora o efeito visual */
+    background-attachment: fixed;
+    border-bottom: 5px solid white;
 }
 
 
@@ -88,7 +89,6 @@ h2 {
 
 .h2-margin-top {
     margin-top: 96px;
-    border-bottom: 5px solid white;
 }
 
 main {
