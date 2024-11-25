@@ -20,9 +20,27 @@
         </ul>
     </nav>
     <header>
-        <h1>História em Jogo</h1>
-        <p>O História em Jogo é um site que busca explicar o conteúdo de história</p>
-
+        <h1 class="h1-shadow">História em Jogo</h1>
+        <h2>Bem-vindo ao História em Jogo</h2>
+        <p class="entrada">O História em Jogo é uma plataforma interativa criada especialmente para ajudar você a
+            explorar a história
+            do Brasil de uma maneira diferente, envolvente e cheia de curiosidade. Aqui, o conhecimento não está apenas
+            nos livros: ele está nos jogos, nas músicas e nas atividades que vão fazer você viver a história de perto.
+            Nosso foco é o período do Estado Novo e a forma como o samba, a música que embala nossa cultura, foi
+            utilizado como uma poderosa ferramenta para criar uma ideia de identidade nacional. Nesta plataforma, você
+            vai entender como Getúlio Vargas e seu governo moldaram a imagem do Brasil, transformando o samba em uma voz
+            oficial, ao mesmo tempo que muitas outras vozes foram silenciadas.
+            <br>Por aqui, você encontrará:
+            Exploração Histórica: Contextos e explicações sobre como a história aconteceu, quais forças estavam em jogo
+            e como a cultura se transformou ao longo do tempo.
+            Canções e Cultura: Análise crítica de letras de samba da época, entendendo como elas ajudaram a promover
+            ideias do governo e a construir a identidade do nosso país.
+            Atividades Gamificadas: Jogos, quizzes e desafios para testar seu conhecimento e fazer com que você se sinta
+            parte da história que está sendo contada.
+            Nosso objetivo é tornar a história um processo ativo, no qual você, como estudante, se envolva de maneira
+            divertida e reflexiva, entendendo o passado para fazer perguntas sobre o presente.
+            Vamos começar? Explore, jogue, reflita, e aprenda de um jeito novo e interessante!
+        </p>
     </header>
     <main>
         <section id="introducao">
@@ -90,7 +108,7 @@
                                     </figure>
 
                                     <figure>
-                                        <img class="float-img float-img-family" src="família.png">
+                                        <img class="float-img float-img-family" src="familia.png">
                                         <figcaption>Família reunida ao redor do rádio na década de 1930</figcaption>
                                     </figure>
 
@@ -283,11 +301,12 @@
                                     <li>Eleições Gerais: O fim do Estado Novo resultou em um período de abertura
                                         política no Brasil, levando à realização de eleições gerais para a presidência,
                                         onde Eurico Gaspar Dutra foi eleito em 1945.</li>
-                                    <li class="more-padding2">Legado Cultural e Político: O Estado Novo deixou um legado controverso. Embora
-                                    tenha promovido certa modernização do Estado e das instituições, também marcou a
-                                    história com seu autoritarismo, censura e controle social. O nacionalismo
-                                    trabalhista, promovido por Vargas, continuou a ter forte impacto na política
-                                    brasileira.</li>
+                                    <li class="more-padding2">Legado Cultural e Político: O Estado Novo deixou um legado
+                                        controverso. Embora
+                                        tenha promovido certa modernização do Estado e das instituições, também marcou a
+                                        história com seu autoritarismo, censura e controle social. O nacionalismo
+                                        trabalhista, promovido por Vargas, continuou a ter forte impacto na política
+                                        brasileira.</li>
                                 </ul>
                                 Reflexão: Como você vê a transição de um regime autoritário para uma abertura
                                 política? Qual a importância de garantir espaços democráticos em um contexto de
@@ -301,12 +320,13 @@
                     <p>Pergunta reflexiva: <strong>Você acha que a música pode moldar a identidade de uma nação?
                             Por
                             quê?</strong></p>
-                    <textarea id="response-intro" placeholder="Escreva sua resposta aqui..."></textarea>
+                    <textarea id="responseIntro" placeholder="Escreva sua resposta aqui..."></textarea>
+                    <button class="save-button" onclick="saveResponse()">Salvar Resposta</button>
                 </div>
         </section>
 
         <section id="exploracao">
-            <h2>Exploração das Canções de Samba</h2>
+            <h2>Explorando Canções</h2>
             <p>Mergulhe nas letras do samba e descubra suas mensagens ocultas de resistência e manipulação.</p>
             <div class="song-analysis">
                 <h3>Aquarela do Brasil</h3>
@@ -319,10 +339,11 @@
         </section>
 
         <section id="gamificacao">
-            <h2>Gamificação e Feedback Interativo</h2>
+            <h2>Testando os conhecimentos</h2>
             <p>Teste seus conhecimentos e veja como suas escolhas afetam a narrativa histórica.</p>
             <div class="quiz">
                 <h3>Quiz: O impacto do samba no Estado Novo</h3>
+                <div class="quiz-1" id="question1"></div>
                 <p>O samba foi usado como:</p>
                 <ul>
                     <li><input type="radio" name="quiz" value="0"> Uma expressão artística sem influência política.</li>
@@ -333,7 +354,10 @@
                 </ul>
                 <button onclick="checkQuiz()">Enviar</button>
                 <p id="quizFeedback"></p>
-                <p id="scoreFeedback"></p>
+                <div id="scoreSection" style="display:none">
+                    <h3 id="scoreFeedback">Sua pontuação:</h3>
+                    <p id="scoreDisplay"></p>
+                </div>
             </div>
         </section>
     </main>
