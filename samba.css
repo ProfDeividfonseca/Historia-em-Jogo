@@ -54,12 +54,15 @@ nav ul li a:hover {
 
 header {
     min-height: 100vh;
+    height: 100%;
     padding-top: 60px;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(getulio.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; /* Faz a imagem de fundo ficar fixa e melhora o efeito visual */
 }
+
 
 h1 {
     text-align: center;
