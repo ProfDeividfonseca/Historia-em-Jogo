@@ -61,9 +61,17 @@ h1 {
     font-size: 2.986rem;
 }
 
+.h1-shadow {
+    text-shadow: 0 0 20px yellow, 0 0 20px white, 0 0 20px lightgreen;
+}
+
 h2 {
     font-size: 2.488rem;
     text-align: center;
+}
+
+.entrada {
+    font-size: 1.5rem;
 }
 
 main {
@@ -170,13 +178,13 @@ h3 {
 
 .float-img-cover {
     margin-top: -240px;
-    margin-right: -615px; 
+    margin-right: -615px;
     max-width: 211.25px;
 
 }
 
 .float-figcaption {
-    margin-right: -615px; 
+    margin-right: -615px;
 }
 
 figcaption {
@@ -253,6 +261,23 @@ figcaption {
 
 .more-padding2 {
     padding-left: 25px;
+}
+
+.save-button {
+    background-color: rgb(30, 125, 85);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: color 1s linear, background-color 1s linear;
+}
+
+.save-button:hover {
+
+    background-color: rgb(0, 100, 0);
+    color: #FFFF66;
 }
 
 @media (max-width: 768px) {
