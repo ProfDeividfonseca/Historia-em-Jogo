@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Nabla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-padding-top: 60px;
+}
+
+body {
+    font-family: "Nabla", sans-serif;
+    background-color: #000;
+}
+
+.navbar {
+    position: fixed;
+    margin: 0;
+    left: 0;
+    line-height: 5vh;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+}
+
+nav ul {
+    background-color: #333;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 11px 10px 11px 10px;
+    margin-left: auto;
+}
+
+nav ul li a:hover {
+    background-color: black;
+}
+
+header {
+    padding-top: 60px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.986rem;
+}
+
+h2 {
+    font-size: 2.488rem;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.highlight {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+.quiz {
+    padding-top: 30px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    line-height: 5vh;
+    bottom: 0;
+}
+
+h3 {
+    background-color: transparent;
+    font-size: 2.074rem;
+    padding: 5px;
+}
+
+.timeline {
+    border-left: 3px solid white;
+    margin-left: 20px;
+}
+
+.info-content {
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(126, 226, 211, 0.452);
+    border-radius: 20px;
+    position: relative;
+}
+
+.open-modal {
+    background-color: rgb(30, 125, 85);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: color 1s linear, background-color 1s linear;
+}
+
+.open-modal:hover {
+    background-color: rgb(0, 100, 0);
+    color: #FFFF66;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.close-modal:hover {
+    background-color: rgb(0, 100, 0);
+    color: #FFFF66;
+}
+
+.figure-img {
+    justify-self: center;
+}
+
+.float-img {
+    width: 100%;
+    height: auto;
+    max-width: 240px;
+}
+
+.float-img-family {
+    margin-top: -240px;
+}
+
+.float-img-cover {
+    margin-top: -240px;
+    margin-right: -615px; 
+    max-width: 211.25px;
+
+}
+
+.float-figcaption {
+    margin-right: -615px; 
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.justified {
+    font-size: 1.3rem;
+}
+
+.flex-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-content {
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+    z-index: 1001;
+    overflow-x: hidden;
+    font-size: 1.3rem;
+}
+
+.close-modal {
+    background-color: rgb(30, 125, 85);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: color 1s linear, background-color 1s linear;
+    margin-top: 20px;
+}
+
+.h4-shadow {
+    font-size: 1.728rem;
+    text-shadow: 0 0 20px #fff, 0 0 20px #00f;
+}
+
+.h2-shadow {
+    text-shadow: 0 0 20px #fff, 0 0 20px #00f;
+}
+
+.modal-content ul {
+    margin-left: 0;
+    padding-left: 20px;
+    list-style-position: inside;
+}
+
+.more-padding {
+    padding-left: 30px;
+}
+
+.more-padding2 {
+    padding-left: 25px;
+}
+
+@media (max-width: 768px) {
+    .flex-container {
+        grid-template-columns: 1fr;
+    }
+}
