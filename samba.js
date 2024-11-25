@@ -136,4 +136,3 @@ function closeVideoModal() {
     modal.style.opacity = "0";
     modal.style.visibility = "hidden";
 }
-
