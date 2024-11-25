@@ -15,8 +15,8 @@
     <nav class="navbar">
         <ul>
             <li><a href="#introducao">Introdução</a></li>
-            <li><a href="#exploracao">Exploração</a></li>
-            <li><a href="#gamificacao">Gamificação</a></li>
+            <li><a href="#cancoes">Canções</a></li>
+            <li><a href="#teste">Teste</a></li>
         </ul>
     </nav>
     <header>
@@ -63,7 +63,7 @@
                                 <div class="flex-container">
 
                                     <figure class="figure-img">
-                                        <img class="float-img" src="Getulio_Vargas.jpg"
+                                        <img class="float-img" src="Getulio Vargas.jpg"
                                             alt="Getúlio Vargas discursando ao público" width="240" height="240">
                                         <figcaption>Getúlio Vargas discursando durante o início do Estado Novo, 1937.
                                         </figcaption>
@@ -325,11 +325,12 @@
                 </div>
         </section>
 
-        <section id="exploracao">
+        <section id="cancoes">
             <h2>Explorando Canções</h2>
             <p>Mergulhe nas letras do samba e descubra suas mensagens ocultas de resistência e manipulação.</p>
             <div class="song-analysis">
-                <h3>Aquarela do Brasil</h3>
+                <h3>Aquarela do Brasil</h3> 
+                <button class="music-button" onclick="showLocalVideo()">Ouça</button>
                 <p>Clique nos trechos destacados para mais informações:</p>
                 <p><span class="highlight">"Brasil, meu Brasil brasileiro..."</span> <span id="analysis-1"
                         class="hidden">Exalta uma visão idealizada do Brasil.</span></p>
@@ -338,25 +339,119 @@
             </div>
         </section>
 
-        <section id="gamificacao">
+        <div class="modal-video" id="video-modal">
+            <div class="modal-content-video">
+                <button class="close-video" onclick="closeVideoModal()">&times;</button>
+                <video id="local-video" width="100%" height="450" controls>
+                    <source src="Aquarela Do Brasil.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+        </div>
+
+
+
+        <section id="teste">
             <h2>Testando os conhecimentos</h2>
             <p>Teste seus conhecimentos e veja como suas escolhas afetam a narrativa histórica.</p>
             <div class="quiz">
                 <h3>Quiz: O impacto do samba no Estado Novo</h3>
-                <div class="quiz-1" id="question1"></div>
-                <p>O samba foi usado como:</p>
-                <ul>
-                    <li><input type="radio" name="quiz" value="0"> Uma expressão artística sem influência política.</li>
-                    <li><input type="radio" name="quiz" value="1"> Um meio de manipulação pelo governo.</li>
-                    <li><input type="radio" name="quiz" value="0"> Uma ferramenta de exclusão das populações negras.
-                    </li>
-                    <li><input type="radio" name="quiz" value="0"> Todas as alternativas anteriores.</li>
-                </ul>
-                <button onclick="checkQuiz()">Enviar</button>
+                <div class="quiz-active" id="question-1">
+                    <p>Pergunta 1: O samba foi usado como:</p>
+                    <ul>
+                        <li><input type="radio" name="quiz1" value="0"> Uma expressão artística sem influência política.
+                        </li>
+                        <li><input type="radio" name="quiz1" value="1"> Um meio de manipulação pelo governo.</li>
+                        <li><input type="radio" name="quiz1" value="0"> Uma ferramenta de exclusão das populações
+                            negras.
+                        </li>
+                        <li><input type="radio" name="quiz1" value="0">Uma expressão cultural apoiada e incentivada por
+                            todos os segmentos da sociedade.
+                        </li>
+                        <li><input type="radio" name="quiz1" value="0"> Todas as alternativas anteriores.</li>
+                    </ul>
+                    <button onclick="nextQuestion(1)">Enviar</button>
+                </div>
+                <div class="quiz-hidden" id="question-2">
+                    <p>Pergunta 2: Qual foi o impacto das políticas culturais de Vargas no samba como expressão
+                        artística?</p>
+                    <ul>
+                        <li><input type="radio" name="quiz2" value="1">Promover uma versão padronizada e controlada do
+                            samba.
+                        </li>
+                        <li><input type="radio" name="quiz2" value="0">Destruir as tradições culturais ligadas ao samba.
+                        </li>
+                        <li><input type="radio" name="quiz2" value="0">Incentivar a rebeldia contra o governo.
+                        </li>
+                        <li><input type="radio" name="quiz2" value="0">Mudar o ritmo musical para se aproximar da música
+                            clássica.
+                        </li>
+                        <li><input type="radio" name="quiz2" value="0">Tornar o samba apenas uma moda passageira.
+                        </li>
+                    </ul>
+                    <button onclick="nextQuestion(2)">Enviar</button>
+                </div>
+
+                <div class="quiz-hidden" id="question-3">
+                    <p>Pergunta 3: Quais foram os grupos sociais que tiveram sua voz mais silenciada na narrativa do
+                        samba oficial promovida pelo governo Vargas?
+                    </p>
+                    <ul>
+                        <li><input type="radio" name="quiz3" value="0">Trabalhadores urbanos.
+                        </li>
+                        <li><input type="radio" name="quiz3" value="0">Intelectuais acadêmicos.</li>
+                        <li><input type="radio" name="quiz3" value="1">Comunidades negras e sambistas das favelas.
+                        </li>
+                        <li><input type="radio" name="quiz3" value="0">Grandes empresários e industriais.
+                        </li>
+                        <li><input type="radio" name="quiz3" value="0">Militares do exército.
+                        </li>
+                    </ul>
+                    <button onclick="nextQuestion(3)">Enviar</button>
+                </div>
+                <div class="quiz-hidden" id="question-4">
+                    <p>Pergunta 4: Durante o Estado Novo, o samba foi transformado em símbolo de quê?
+                    </p>
+                    <ul>
+                        <li><input type="radio" name="quiz4" value="0">Modernização do Brasil.
+                        </li>
+                        <li><input type="radio" name="quiz4" value="0">Cultura de elite.
+                        </li>
+                        <li><input type="radio" name="quiz4" value="0">Tradição regionalista.
+                        </li>
+                        <li><input type="radio" name="quiz4" value="1">Brasilidade e identidade nacional.
+                        </li>
+                        <li><input type="radio" name="quiz4" value="0">Movimentos internacionais de resistência.
+                        </li>
+                    </ul>
+                    <button onclick="nextQuestion(4)">Enviar</button>
+                </div>
+
+                <div class="quiz-hidden" id="question-5">
+                    <p>Pergunta 5: O conceito de "trabalhismo" promovido pelo governo Vargas tinha como objetivo:
+                    </p>
+                    <ul>
+                        <li><input type="radio" name="quiz5" value="0">Garantir o pleno direito à liberdade sindical.
+                        </li>
+                        <li><input type="radio" name="quiz5" value="1">Promover o controle do Estado sobre a classe
+                            trabalhadora, oferecendo benefícios controlados.
+                        </li>
+                        <li><input type="radio" name="quiz5" value="0">Excluir completamente a participação popular nas
+                            políticas trabalhistas.
+                        </li>
+                        <li><input type="radio" name="quiz5" value="0">Incentivar o empreendedorismo privado.
+                        </li>
+                        <li><input type="radio" name="quiz5" value="0">Valorizar o trabalho rural e excluir a
+                            urbanização.
+                        </li>
+                    </ul>
+                    <button onclick="nextQuestion(5)">Enviar</button>
+                </div>
+
                 <p id="quizFeedback"></p>
-                <div id="scoreSection" style="display:none">
+                <div id="score-section" style="display:none">
                     <h3 id="scoreFeedback">Sua pontuação:</h3>
-                    <p id="scoreDisplay"></p>
+                    <p id="score-display"></p>
                 </div>
             </div>
         </section>
