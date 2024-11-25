@@ -5,19 +5,6 @@ document.querySelectorAll('.highlight').forEach(item => {
     });
 });
 
-function checkQuiz() {
-    const answers = document.getElementsByName('quiz');
-    let feedback = "Por favor, selecione uma opção.";
-    answers.forEach(answer => {
-        if (answer.checked && answer.value === "1") {
-            feedback = "Correto! O samba foi usado como um meio de manipulação pelo governo.";
-        } else if (answer.checked) {
-            feedback = "Resposta incorreta. Tente novamente.";
-        }
-    });
-    document.getElementById('quiz-feedback').textContent = feedback;
-}
-
 function openModal() {
     const modal = document.getElementById("modalOverlay");
     modal.style.display = "block";
@@ -89,7 +76,7 @@ let score = 0;
 function nextQuestion(currentQuestionIndex) {
     const currentQuestion = document.getElementById(`question-${currentQuestionIndex}`);
     const selectedOption = document.querySelector(`input[name="quiz${currentQuestionIndex}"]:checked`);
-
+ 
     if (!selectedOption) {
         alert("Por favor, selecione uma resposta antes de continuar.");
         return;
@@ -99,23 +86,54 @@ function nextQuestion(currentQuestionIndex) {
         score++;
     }
 
-    currentQuestion.classList.remove('active');
+    currentQuestion.classList.remove('quiz-active');
+    currentQuestion.classList.add('quiz-hidden');
 
     const nextQuestionIndex = currentQuestionIndex + 1;
     const nextQuestion = document.getElementById(`question-${nextQuestionIndex}`);
 
     if (nextQuestion) {
-        nextQuestion.classList.add('active');
+        nextQuestion.classList.remove('quiz-hidden');
+        nextQuestion.classList.add('quiz-active');
     } else {
         showScore();
     }
 }
+  
 
 function showScore() {
     const scoreSection = document.getElementById("score-section");
-    const scoreDisplay = document.getElementById("scoreDisplay");
+    const scoreDisplay = document.getElementById("score-display");
 
-    scoreDisplay.innerText = `Você acertou ${score} de 3 perguntas.`;
+    scoreDisplay.innerText = `Você acertou ${score} de 5 perguntas.`;
 
     scoreSection.style.display = "block";
 }
+
+function checkQuiz() {
+    const answers = document.getElementsByName('quiz');
+    let feedback = "Por favor, selecione uma opção.";
+    answers.forEach(answer => {
+        if (answer.checked) {
+            feedback = (answer.value === "1") ? "Correto! O samba foi usado como um meio de manipulação pelo governo." : "Resposta incorreta. Tente novamente.";
+        }
+    });
+    document.getElementById('quizFeedback').textContent = feedback;
+  }
+
+  function showLocalVideo() {
+    const modal = document.getElementById("video-modal");
+    modal.style.visibility = "visible";
+    modal.style.opacity = "1";
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById("video-modal");
+    const videoElement = document.getElementById("local-video");
+
+    videoElement.pause();
+
+    modal.style.opacity = "0";
+    modal.style.visibility = "hidden";
+}
+
