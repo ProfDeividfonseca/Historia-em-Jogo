@@ -69,25 +69,53 @@ function close1945() {
     modal.style.display = "none";
 }
 
-function checkQuiz() {
-    const options = document.querySelectorAll('input[name="quiz"]');
-    let score = 0;
-    let correctValue = "1"; // O valor correto para a resposta do quiz
+function saveResponse() {
+    const response = document.getElementById('responseIntro').value;
+    localStorage.setItem('response', response);
+    alert('Resposta salva com sucesso!');
+}
 
-    options.forEach((option) => {
-        if (option.checked && option.value === correctValue) {
-            score++;
-        }
-    });
-
-    const feedback = document.getElementById("quizFeedback");
-    const scoreFeedback = document.getElementById("scoreFeedback");
-
-    if (score > 0) {
-        feedback.textContent = "Parabéns, você acertou!";
-        scoreFeedback.textContent = `Seu score é: ${score} de 1.`;
-    } else {
-        feedback.textContent = "Tente novamente.";
-        scoreFeedback.textContent = `Seu score é: ${score} de 1.`;
+window.onload = function() {
+    const savedResponse = localStorage.getItem('response');
+    if (savedResponse) {
+        document.getElementById('responseIntro').value = savedResponse;
     }
+};
+
+
+
+let score = 0;
+
+function nextQuestion(currentQuestionIndex) {
+    const currentQuestion = document.getElementById(`question-${currentQuestionIndex}`);
+    const selectedOption = document.querySelector(`input[name="quiz${currentQuestionIndex}"]:checked`);
+
+    if (!selectedOption) {
+        alert("Por favor, selecione uma resposta antes de continuar.");
+        return;
+    }
+
+    if (selectedOption.value === "1") {
+        score++;
+    }
+
+    currentQuestion.classList.remove('active');
+
+    const nextQuestionIndex = currentQuestionIndex + 1;
+    const nextQuestion = document.getElementById(`question-${nextQuestionIndex}`);
+
+    if (nextQuestion) {
+        nextQuestion.classList.add('active');
+    } else {
+        showScore();
+    }
+}
+
+function showScore() {
+    const scoreSection = document.getElementById("score-section");
+    const scoreDisplay = document.getElementById("scoreDisplay");
+
+    scoreDisplay.innerText = `Você acertou ${score} de 3 perguntas.`;
+
+    scoreSection.style.display = "block";
 }
