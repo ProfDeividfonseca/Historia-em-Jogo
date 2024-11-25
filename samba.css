@@ -54,6 +54,10 @@ nav ul li a:hover {
 
 header {
     padding-top: 60px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(getulio.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -72,6 +76,15 @@ h2 {
 
 .entrada {
     font-size: 1.5rem;
+}
+
+.border-top {
+    border-top: 5px solid white;
+}
+
+.h2-margin-top {
+    margin-top: 96px;
+    border-bottom: 5px solid white;
 }
 
 main {
@@ -243,6 +256,8 @@ figcaption {
     transition: color 1s linear, background-color 1s linear;
     margin-top: 20px;
 }
+
+
 
 .h4-shadow {
     font-size: 1.728rem;
